@@ -25,7 +25,7 @@ const GroupChatDialog = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await fetch(
-        "http://localhost:2000/api/user?search=" + name,
+        "https://social-network-backend-fn7k.onrender.com/api/user?search=" + name,
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ const GroupChatDialog = () => {
         users: JSON.stringify(groupMembers.map((u) => u._id)),
       };
 
-      const response = await fetch("http://localhost:2000/api/chat/group", {
+      const response = await fetch("https://social-network-backend-fn7k.onrender.com/api/chat/group", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

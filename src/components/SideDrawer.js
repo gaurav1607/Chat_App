@@ -17,7 +17,7 @@ export const SideDrawer = () => {
   useEffect(() => {
     async function fetchData() {
       const data = await fetch(
-        "http://localhost:2000/api/user?search=" + name,
+        "https://social-network-backend-fn7k.onrender.com/api/user?search=" + name,
         {
           method: "GET",
           headers: {

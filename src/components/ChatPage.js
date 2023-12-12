@@ -23,7 +23,7 @@ import EmojiPicker, { EmojiStyle } from "emoji-picker-react";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json"
 
-const ENDPOINT = "http://localhost:2000";
+const ENDPOINT = "https://social-network-backend-fn7k.onrender.com";
 var socket, selectedChatCompare;
 
 export const ChatPage = () => {
@@ -86,7 +86,7 @@ export const ChatPage = () => {
   });
 
   const fetchNotification = async ()=>{
-    const data = await fetch("http://localhost:2000/api/notification/"+ user.id,{
+    const data = await fetch("https://social-network-backend-fn7k.onrender.com//api/notification/"+ user.id,{
       headers: {
         Authorization: "Bearer " + user.token,
       },
@@ -103,7 +103,7 @@ export const ChatPage = () => {
   const fetchChats = async () => {
     if (!selectedChat) return;
     const response = await fetch(
-      "http://localhost:2000/api/message/" + selectedChat._id,
+      "https://social-network-backend-fn7k.onrender.com//api/message/" + selectedChat._id,
       {
         method: "GET",
         headers: {
@@ -120,7 +120,7 @@ export const ChatPage = () => {
   const sendChatMessage = async () => {
     socket.emit("stop typing", selectedChat._id);
 
-    const response = await fetch("http://localhost:2000/api/message", {
+    const response = await fetch("https://social-network-backend-fn7k.onrender.com//api/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -132,7 +132,7 @@ export const ChatPage = () => {
 
     // sending notification
     if(selectedChat._id !== user.id) {
-      const notData = await fetch("http://localhost:2000/api/notification",{
+      const notData = await fetch("https://social-network-backend-fn7k.onrender.com/api/notification",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

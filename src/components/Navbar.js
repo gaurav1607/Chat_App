@@ -47,7 +47,7 @@ export default function Navbar() {
 
   const fetchNotification = async () => {
     const data = await fetch(
-      "http://localhost:2000/api/notification/" + user.id,
+      "https://social-network-backend-fn7k.onrender.com/api/notification/" + user.id,
       {
         headers: {
           Authorization: "Bearer " + user.token,
@@ -61,7 +61,7 @@ export default function Navbar() {
 
   const handleNotiClick = async (id, chatId) => {
     const data = await fetch(
-      "http://localhost:2000/api/notification/" + chatId,
+      "https://social-network-backend-fn7k.onrender.com/api/notification/" + chatId,
       {
         method: "GET",
         headers: {
@@ -77,7 +77,7 @@ export default function Navbar() {
     dispatch({ type: "SELECT_CHAT_USER", payload: userRes[0]?.message.chat });
 
     const response = await fetch(
-      "http://localhost:2000/api/notification/" + id,
+      "https://social-network-backend-fn7k.onrender.com/api/notification/" + id,
       {
         method: "DELETE",
         headers: {

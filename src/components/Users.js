@@ -11,7 +11,7 @@ const Users = ({userInfo}) => {
 
   const handleSelectChat = async (info)=>{
 
-    const response = await fetch("http://localhost:2000/api/chat",{
+    const response = await fetch("https://social-network-backend-fn7k.onrender.com/api/chat",{
       method: "POST",
       headers:{
         "Content-Type": "application/json",

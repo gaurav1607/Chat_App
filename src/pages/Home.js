@@ -28,7 +28,7 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:2000/api/chat", {
+      const response = await fetch("https://social-network-backend-fn7k.onrender.com/api/chat", {
         headers: {
           "Content-type": "application/json",
           Authorization: "Bearer " + user.token,

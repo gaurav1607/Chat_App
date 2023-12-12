@@ -43,7 +43,7 @@ export const Register = () => {
     console.log("Form submitted:", formData);
     // Add form submission logic here (e.g., send data to a server)
     const response = await axios.post(
-      "http://localhost:2000/api/user/register",
+      "https://social-network-backend-fn7k.onrender.com/api/user/register",
       {
         name : formData.firstName +" "+formData.lastName,
         email: formData.email,

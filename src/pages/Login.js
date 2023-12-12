@@ -16,7 +16,7 @@ export const Login = () => {
     e.preventDefault();
     // TODO: Implement login logic
     const response = await axios.post(
-        "http://localhost:2000/api/user/login",
+        "https://social-network-backend-fn7k.onrender.com/api/user/login",
         {
         email,password
         },
