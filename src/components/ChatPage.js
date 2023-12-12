@@ -23,7 +23,7 @@ import EmojiPicker, { EmojiStyle } from "emoji-picker-react";
 import Lottie from "react-lottie";
 import animationData from "../animations/typing.json"
 
-const ENDPOINT = "https://social-network-backend-fn7k.onrender.com";
+const ENDPOINT = "https://social-network-backend-fn7k.onrender.com/";
 var socket, selectedChatCompare;
 
 export const ChatPage = () => {
@@ -119,6 +119,7 @@ export const ChatPage = () => {
 
   const sendChatMessage = async () => {
     socket.emit("stop typing", selectedChat._id);
+    if(text === "") return ;
 
     const response = await fetch("https://social-network-backend-fn7k.onrender.com/api/message", {
       method: "POST",

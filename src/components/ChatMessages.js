@@ -34,7 +34,7 @@ useEffect(() => {
     <div
       style={{
         overflowY: 'auto',
-        height: '100vh',
+        height: '70vh',
         padding: '10px',
         display: 'flex',
         flexDirection: 'column-reverse',
