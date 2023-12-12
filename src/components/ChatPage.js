@@ -86,7 +86,7 @@ export const ChatPage = () => {
   });
 
   const fetchNotification = async ()=>{
-    const data = await fetch("https://social-network-backend-fn7k.onrender.com//api/notification/"+ user.id,{
+    const data = await fetch("https://social-network-backend-fn7k.onrender.com/api/notification/"+ user.id,{
       headers: {
         Authorization: "Bearer " + user.token,
       },
@@ -103,7 +103,7 @@ export const ChatPage = () => {
   const fetchChats = async () => {
     if (!selectedChat) return;
     const response = await fetch(
-      "https://social-network-backend-fn7k.onrender.com//api/message/" + selectedChat._id,
+      "https://social-network-backend-fn7k.onrender.com/api/message/" + selectedChat._id,
       {
         method: "GET",
         headers: {
@@ -120,7 +120,7 @@ export const ChatPage = () => {
   const sendChatMessage = async () => {
     socket.emit("stop typing", selectedChat._id);
 
-    const response = await fetch("https://social-network-backend-fn7k.onrender.com//api/message", {
+    const response = await fetch("https://social-network-backend-fn7k.onrender.com/api/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
