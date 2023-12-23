@@ -29,6 +29,7 @@ export const Login = () => {
         navigate("/")
       }else{
         // show alert here
+        alert(response.data)
       }
   };
 
@@ -46,7 +47,7 @@ export const Login = () => {
         borderRadius={8}
         boxShadow={3}
       >
-    <Container maxWidth="sm">
+    <Container maxWidth="sm"  >
       <Typography variant="h4" align="center" gutterBottom>
         Login
       </Typography>

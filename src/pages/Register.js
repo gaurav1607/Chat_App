@@ -59,6 +59,7 @@ export const Register = () => {
       navigate("/");
     } else {
       // show alert dialog
+      alert(response.data)
     }
   };
 
